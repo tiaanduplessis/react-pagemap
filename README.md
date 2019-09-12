@@ -17,9 +17,11 @@ import React, { Component } from 'react'
 import PageMap from 'react-pagemap'
 
 const Example = () => {
-  const example = useMyHook()
   return (
-
+    <main>
+      <PageMap/>
+      <h1>Hello</h1>
+    </main>
   )
 }
 ```
