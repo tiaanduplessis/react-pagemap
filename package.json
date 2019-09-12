@@ -2,7 +2,7 @@
   "name": "react-pagemap",
   "version": "1.0.0",
   "description": "React wrapper for pagemap. Mini map for web pages.",
-  "author": "tiaanduplessis",
+  "author": "Tiaan du Plessis <tiaanduplessis@hotmail.com>",
   "license": "MIT",
   "repository": "tiaanduplessis/react-pagemap",
   "main": "dist/index.js",
@@ -45,9 +45,9 @@
     "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "10.0.2",
     "cross-env": "^5.2.0",
-    "eslint": "5.16.0",
+    "eslint": "^6.1.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-standard-react": "^6.0.0",
     "eslint-plugin-import": "^2.13.0",
@@ -64,5 +64,8 @@
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-url": "^2.1.0"
+  },
+  "dependencies": {
+    "pagemap": "^1.2.0"
   }
 }

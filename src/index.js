@@ -1,21 +1,44 @@
-import * as React from 'react'
+import React, { useRef, useEffect }  from 'react'
+import pagemap from 'pagemap'
 
-export const useMyHook = () => {
-  let [{
-    counter
-  }, setState] = React.useState({
-    counter: 0
+const PageMap = React.memo(({ viewport, styles, back, view, interval }) => {
+  const mapElem = useRef(null)
+
+  const { container } = styles
+
+  useEffect(() => {
+    pagemap(mapElem.current, {
+      viewport,
+      styles,
+      back,
+      view,
+      interval
+    })
   })
 
-  React.useEffect(() => {
-    let interval = window.setInterval(() => {
-      counter++
-      setState({counter})
-    }, 1000)
-    return () => {
-      window.clearInterval(interval)
-    }
-  }, [])
+  return <canvas style={container} ref={mapElem}></canvas>
+})
 
-  return counter
+PageMap.defaultProps = {
+  viewport: null,
+  styles: {
+    container: {
+      position: 'fixed',
+      top: '8px',
+      right: '8px',
+      width: '100px',
+      height: '100%',
+      zIndex: '100'
+    },
+    'header,footer,section,article': 'rgba(0, 0, 0, 0.08)',
+    'h1,a': 'rgba(0, 0, 0, 0.10)',
+    'h2,h3,h4': 'rgba(0, 0, 0, 0.08)'
+  },
+  back: 'rgba(0, 0, 0, 0.02)',
+  view: 'rgba(0, 0, 0, 0.05)',
+  drag: 'rgba(0, 0, 0, 0.10)',
+  interval: null
 }
+
+
+export default PageMap

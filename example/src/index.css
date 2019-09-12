@@ -1,5 +1,13 @@
-/* body {
+body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-} */
+}
+
+
+main {
+  margin: auto;
+  max-width: 600px;
+  line-height: 1.7;
+  color: #333;
+}
