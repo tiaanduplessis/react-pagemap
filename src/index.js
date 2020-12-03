@@ -4,12 +4,12 @@ import pagemap from 'pagemap'
 const PageMap = React.memo(({ viewport, styles, back, view, interval }) => {
   const mapElem = useRef(null)
 
-  const { container } = styles
+  const { container, ...pagemapStyle } = styles
 
   useEffect(() => {
     pagemap(mapElem.current, {
       viewport,
-      styles,
+      styles: pagemapStyle,
       back,
       view,
       interval
