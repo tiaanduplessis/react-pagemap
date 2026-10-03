@@ -1,7 +1,7 @@
 import React, { useRef, useEffect }  from 'react'
 import pagemap from 'pagemap'
 
-const PageMap = React.memo(({ viewport, styles, back, view, interval }) => {
+const PageMap = React.memo(({ viewport, styles, back, view, drag, interval }) => {
   const mapElem = useRef(null)
 
   const { container, ...pagemapStyle } = styles
@@ -12,6 +12,7 @@ const PageMap = React.memo(({ viewport, styles, back, view, interval }) => {
       styles: pagemapStyle,
       back,
       view,
+      drag,
       interval
     })
   })
